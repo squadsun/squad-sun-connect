@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 14% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14% 10%;
+    --primary: 35 100% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 20% 96%;
+    --secondary-foreground: 20 14% 10%;
+    --muted: 30 14% 96%;
+    --muted-foreground: 20 10% 42%;
+    --accent: 35 100% 96%;
+    --accent-foreground: 20 14% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 30 12% 90%;
+    --input: 30 12% 90%;
+    --ring: 35 100% 55%;
+    --solar: 35 100% 55%;
+    --solar-foreground: 0 0% 100%;
+    --battery: 173 80% 40%;
+    --battery-foreground: 0 0% 100%;
+    --ink: 20 14% 9%;
+    --ink-foreground: 0 0% 98%;
+    --chart-1: 35 100% 55%;
+    --chart-2: 160 60% 42%;
+    --chart-3: 197 37% 38%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.9rem;
+    --font-heading: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 20 14% 9%;
+    --foreground: 30 10% 92%;
+    --card: 20 14% 12%;
+    --card-foreground: 30 10% 92%;
+    --popover: 20 14% 12%;
+    --popover-foreground: 30 10% 92%;
+    --primary: 35 100% 55%;
+    --primary-foreground: 20 14% 9%;
+    --secondary: 20 10% 16%;
+    --secondary-foreground: 30 10% 92%;
+    --muted: 20 10% 16%;
+    --muted-foreground: 30 6% 62%;
+    --accent: 35 40% 16%;
+    --accent-foreground: 30 10% 92%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 20 8% 22%;
+    --input: 20 8% 22%;
+    --ring: 35 100% 55%;
+    --solar: 35 100% 55%;
+    --solar-foreground: 20 14% 9%;
+    --battery: 173 80% 40%;
+    --battery-foreground: 20 14% 9%;
+    --ink: 30 10% 92%;
+    --ink-foreground: 20 14% 9%;
+    --sidebar-background: 20 14% 9%;
+    --sidebar-foreground: 30 6% 62%;
+    --sidebar-primary: 35 100% 55%;
+    --sidebar-primary-foreground: 20 14% 9%;
+    --sidebar-accent: 20 10% 16%;
+    --sidebar-accent-foreground: 30 10% 92%;
+    --sidebar-border: 20 8% 22%;
+    --sidebar-ring: 35 100% 55%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 20 14% 9%;
+    --foreground: 30 10% 92%;
+    --card: 20 14% 12%;
+    --card-foreground: 30 10% 92%;
+    --popover: 20 14% 12%;
+    --popover-foreground: 30 10% 92%;
+    --primary: 35 100% 55%;
+    --primary-foreground: 20 14% 9%;
+    --secondary: 20 10% 16%;
+    --secondary-foreground: 30 10% 92%;
+    --muted: 20 10% 16%;
+    --muted-foreground: 30 6% 62%;
+    --accent: 35 40% 16%;
+    --accent-foreground: 30 10% 92%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 20 8% 22%;
+    --input: 20 8% 22%;
+    --ring: 35 100% 55%;
+    --solar: 35 100% 55%;
+    --solar-foreground: 20 14% 9%;
+    --battery: 173 80% 40%;
+    --battery-foreground: 20 14% 9%;
+    --ink: 30 10% 92%;
+    --ink-foreground: 20 14% 9%;
+    --sidebar-background: 20 14% 9%;
+    --sidebar-foreground: 30 6% 62%;
+    --sidebar-primary: 35 100% 55%;
+    --sidebar-primary-foreground: 20 14% 9%;
+    --sidebar-accent: 20 10% 16%;
+    --sidebar-accent-foreground: 30 10% 92%;
+    --sidebar-border: 20 8% 22%;
+    --sidebar-ring: 35 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html, body {
+    overscroll-behavior: none;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .font-display { font-family: var(--font-display); }
+  .text-balance { text-wrap: balance; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .safe-bottom { padding-bottom: max(env(safe-area-inset-bottom) - 24px, 0px); }
+  .safe-top { padding-top: env(safe-area-inset-top); }
+  .bg-solar {
+    background: linear-gradient(135deg, hsl(50 100% 57%), hsl(35 100% 57%), hsl(25 100% 52%)) !important;
+  }
+  .bg-primary {
+    background: linear-gradient(135deg, hsl(50 100% 57%), hsl(35 100% 57%), hsl(25 100% 52%)) !important;
+  }
+}
+
+/* Solar Performance visualization only. Fixed architectural palette in both themes. */
+:root, .dark {
+  --house-sky: 212 60% 94%;
+  --house-surface: 216 30% 97%;
+  --house-ink: 218 24% 21%;
+  --house-night: 221 40% 12%;
+  --house-night-ink: 215 35% 95%;
+  --house-cloud: 217 17% 54%;
+}
+.solar-house { background: hsl(var(--house-surface)); color: hsl(var(--house-ink)); }
+.solar-house-scene { position: relative; aspect-ratio: 1 / 1; isolation: isolate; overflow: hidden; }
+.solar-house-bg { position: absolute; inset: 0; aspect-ratio: auto; }
+.solar-house-night { background: hsl(var(--house-night)); color: hsl(var(--house-night-ink)); }
+.solar-house-canvas { position: absolute; inset: 0; }
+.solar-house-art { position: absolute; inset: 0; }
+.solar-house-flow-layer { position: absolute; inset: 0; }
+.solar-house-badge-layer { position: absolute; inset: 0; }
+.solar-house-reading-layer { position: absolute; inset: 0; }
+.solar-house-reading { position: absolute; z-index: 3; padding: 0.45rem 0.75rem 0.5rem 0.85rem; border-radius: 0.75rem; border-left: 3px solid currentColor; background: hsl(0 0% 100% / 0.82); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 4px 14px hsl(var(--house-ink) / 0.18), inset 0 0 0 1px hsl(0 0% 100% / 0.6); color: hsl(var(--house-ink)); }
+.solar-house-night .solar-house-reading { background: hsl(var(--house-night) / 0.78); box-shadow: 0 4px 14px hsl(0 0% 0% / 0.4), inset 0 0 0 1px hsl(0 0% 100% / 0.12); color: hsl(var(--house-night-ink)); }
+.solar-house-reading p { font-size: clamp(10px, 1.1vw, 13px); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.75; line-height: 1.2; }
+.solar-house-reading strong { display: block; font-size: clamp(15px, 2vw, 26px); font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: -0.03em; line-height: 1.15; }
+.solar-house-reading small { display: block; font-size: clamp(9px, 0.85vw, 11px); font-weight: 500; opacity: 0.8; max-width: 13em; line-height: 1.3; margin-top: 0.1rem; }
+.solar-house-pv { border-left-color: hsl(var(--solar)); }
+.solar-house-load { border-left-color: hsl(var(--chart-2)); }
+.solar-house-battery { border-left-color: hsl(var(--battery)); }
+.solar-house-grid { border-left-color: hsl(var(--chart-3)); }
+.solar-house-pv {top: 14%;left: 13%;transform: translate(-50%, -50%);}
+.solar-house-load {top: 14%; left: 76%; transform: translate(-50%, -50%);}
+.solar-house-battery {top: 88%; left: 35%; transform: translate(-50%, -50%);}
+.solar-house-grid {top: 88%;left: 73%;transform: translate(-50%, -50%);}
+.solar-house-guides { opacity: 0.38; }
+.solar-energy-particles { animation: solar-energy-travel 3.5s linear infinite; filter: drop-shadow(0 0 1px currentColor); }
+@keyframes solar-energy-travel { to { stroke-dashoffset: -100; } }
+.solar-house-cloudy .solar-house-art { filter: saturate(0.65) brightness(0.78); }
+
+/* Clouds — shown when weather is cloudy/partly cloudy */
+.solar-clouds { position: absolute; inset: 0; z-index: 2; pointer-events: none; overflow: hidden; }
+.solar-cloud { position: absolute; background: hsl(0 0% 100% / 0.85); border-radius: 50px; filter: blur(1px); box-shadow: inset 0 -6px 12px hsl(220 20% 85% / 0.6); }
+.solar-cloud::before, .solar-cloud::after { content: ''; position: absolute; background: inherit; border-radius: 50%; }
+.solar-cloud-1 { top: 8%; left: -20%; width: 30%; height: 14%; animation: solar-cloud-drift 38s linear infinite; }
+.solar-cloud-1::before { width: 55%; height: 130%; top: -45%; left: 18%; }
+.solar-cloud-1::after { width: 45%; height: 110%; top: -30%; right: 12%; }
+.solar-cloud-2 { top: 16%; left: -25%; width: 24%; height: 11%; opacity: 0.8; animation: solar-cloud-drift 52s linear infinite; animation-delay: -14s; }
+.solar-cloud-2::before { width: 60%; height: 140%; top: -50%; left: 15%; }
+.solar-cloud-2::after { width: 40%; height: 100%; top: -25%; right: 10%; }
+.solar-cloud-3 { top: 5%; left: -18%; width: 20%; height: 9%; opacity: 0.7; animation: solar-cloud-drift 46s linear infinite; animation-delay: -28s; }
+.solar-cloud-3::before { width: 55%; height: 130%; top: -40%; left: 20%; }
+.solar-cloud-3::after { width: 42%; height: 105%; top: -28%; right: 14%; }
+@keyframes solar-cloud-drift { from { transform: translateX(0); } to { transform: translateX(160vw); } }
+.solar-house-night .solar-cloud { background: hsl(220 30% 40% / 0.6); }
+.solar-house-overcast { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(hsl(var(--house-cloud) / 0.32), transparent 70%); }
+.solar-house-rain { position: absolute; inset: -30%; pointer-events: none; opacity: 0.25; transform: rotate(14deg); background-image: repeating-linear-gradient(90deg, transparent 0, transparent 49px, hsl(var(--house-sky)) 50px, transparent 51px); mask-image: repeating-linear-gradient(0deg, transparent 0, transparent 50px, black 51px, black 65px, transparent 66px); animation: solar-rain 0.9s linear infinite; }
+@keyframes solar-rain { to { translate: 0 66px; } }
+@media (prefers-reduced-motion: reduce) { .solar-energy-particles, .solar-house-rain, .solar-cloud { animation: none; } }
+@media (max-width: 480px) {
+  .solar-house-reading { padding: 0.3rem 0.5rem 0.35rem 0.55rem; border-radius: 0.5rem; border-left-width: 2px; }
+  .solar-house-reading strong { font-size: 13px; }
+  .solar-house-reading small { font-size: 8px; }
+  .solar-house-battery { top: 88%; left: 35%; bottom: auto; transform: translate(-50%, -50%); }
+  .solar-house-grid { top: 88%; left: 73%; bottom: auto; transform: translate(-50%, -50%); }
+  .solar-house-scene { margin-bottom: 0.6rem; }
+}
+
+@layer base {
+  button, a, nav, [role="tab"], [role="button"], svg, .select-none {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
